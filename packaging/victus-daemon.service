@@ -1,6 +1,6 @@
 [Unit]
 Description=Victus Control fan daemon
-Documentation=https://github.com/Batuhan4/victus-control
+Documentation=https://github.com/idkreally001/victus-control
 After=multi-user.target
 
 [Service]

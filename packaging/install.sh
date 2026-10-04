@@ -29,6 +29,12 @@ if systemctl list-unit-files victus-backend.service &>/dev/null; then
     systemctl disable --now victus-backend.service 2>/dev/null || true
 fi
 
+echo "--> Ensuring 'victus' group exists..."
+groupadd -f victus
+if [[ -n "${SUDO_USER:-}" ]]; then
+    usermod -aG victus "${SUDO_USER}"
+fi
+
 echo "--> Installing GUI launcher wrapper to /usr/bin/victus-control-gui..."
 cat > /usr/bin/victus-control-gui << EOF
 #!/bin/bash
