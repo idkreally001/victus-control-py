@@ -1,0 +1,6 @@
+{
+  "include": ["daemon", "tray", "gui", "common"],
+  "executionEnvironments": [
+    { "root": "." }
+  ]
+}

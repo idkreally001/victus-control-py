@@ -1,0 +1,13 @@
+[Unit]
+Description=Victus Control fan daemon
+Documentation=https://github.com/Batuhan4/victus-control
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/lib/victus-control/daemon/main.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

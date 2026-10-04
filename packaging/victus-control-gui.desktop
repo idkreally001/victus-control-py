@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Victus Control
+Comment=Fan control for HP Victus laptops
+Exec=/usr/bin/victus-control-gui
+Icon=victus-control
+Terminal=false
+Type=Application
+Categories=Utility;System;

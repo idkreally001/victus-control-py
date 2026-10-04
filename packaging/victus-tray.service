@@ -1,0 +1,21 @@
+[Unit]
+Description=Victus Control tray icon
+Documentation=https://github.com/Batuhan4/victus-control
+# Only meaningful inside a graphical session where a StatusNotifierWatcher
+# (KDE, GNOME via extension, etc.) exists.
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/lib/victus-control/tray/main.py
+Restart=on-failure
+RestartSec=5
+# The daemon (system service, separate boot path) may not be up yet when
+# this starts, or may restart independently later -- the tray already
+# retries its socket connection and recovers on its own, so no ordering
+# dependency on victus-daemon.service is needed or possible across the
+# system/user manager boundary.
+
+[Install]
+WantedBy=graphical-session.target
